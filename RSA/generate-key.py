@@ -3,7 +3,7 @@ from Crypto.PublicKey import RSA
 def export_privkey(privkey, filename):
     with open(filename, "wb") as file:
         file.write(privkey.export_key(format='PEM',
-                                      passphrase='MyPassPhrase',
+                                      passphrase='MyPassPhrase', #yeah, i know...
                                       protection='PBKDF2WithHMAC-SHA512AndAES256-CBC',
                                       prot_params={'iteration_count':131072}))
         file.close()

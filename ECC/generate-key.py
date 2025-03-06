@@ -2,7 +2,7 @@ from Crypto.PublicKey import ECC
 
 def export_privkey(privkey, filename):
     with open(filename, "wt") as file:
-        pwd = b'secret'
+        pwd = b'secret' #I know i know
         key_data = privkey.export_key(format='PEM',
                                 passphrase=pwd,
                                 protection='PBKDF2WithHMAC-SHA512AndAES256-CBC',
