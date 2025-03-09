@@ -1,8 +1,9 @@
 from Crypto.PublicKey import ECC
+import getpass
 
 def export_privkey(privkey, filename):
     with open(filename, "wt") as file:
-        pwd = b'secret' #I know i know
+        pwd = getpass.getpass("Password for the private key : ").encode()
         key_data = privkey.export_key(format='PEM',
                                 passphrase=pwd,
                                 protection='PBKDF2WithHMAC-SHA512AndAES256-CBC',
